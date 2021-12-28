@@ -2,7 +2,7 @@ from django import forms
 from ResumeApiapp.models import Resumeapi
 
 #creating resume api form
-class ResumeapiForm(forms.Form):
+class ResumeapiForm(forms.ModelForm):
     name = forms.CharField(max_length=30)
     graduation = forms.CharField(max_length=30)
     skills = forms.CharField(max_length=100)
@@ -12,4 +12,4 @@ class ResumeapiForm(forms.Form):
 
 class Meta():
     model = Resumeapi
-    Fields = '__all_'
+    fields = '__all_'

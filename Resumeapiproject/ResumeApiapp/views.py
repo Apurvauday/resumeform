@@ -9,5 +9,6 @@ def add_resume_view(request):
     if request.method == 'POST':
         form = ResumeapiForm(request.POST)
         if form.is_valid():
-            form.Save()
+            form =form.cleaned_data
+            form.save()
     return render(request,'ResumeApiapp/addresume.html',{'form':form})
